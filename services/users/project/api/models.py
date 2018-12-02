@@ -44,7 +44,7 @@ class Score(db.Model):
         # get the last score given a player
         return ''
 
-    def getCummulative(self, turn, player):
+    def getCummulativeScore(self, turn, player):
         # get the cummulative score for the previous turn
         return ''
 
@@ -56,5 +56,15 @@ class Score(db.Model):
         # take a score model object and update the database
         return ''
 
-    def __str__(self):
-        return '%s %s' % (self.turn, self.pins, self.cummulative_score)
+    def __init__(self, turn, pins, cummulative_score):
+        self.turn = turn
+        self.pins = pins
+        self.cummulative_score = cummulative_score
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'turn': self.turn,
+            'pins': self.pins,
+            'cummulative_score': self.cummulative_score
+        }

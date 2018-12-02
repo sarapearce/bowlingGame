@@ -11,6 +11,8 @@ Most changes will be made in the users directory.
 
 To play the game:
 
+`git clone git@github.com:sarapearce/bowlingGame.git`
+
 `cd bowling-game`
 
 `docker-compose -f docker-compose-dev.yml up -d --build`
@@ -21,12 +23,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-See the Dockerfile inside each of the services directories for a list of dependencies.
+See the Dockerfile inside each of the `services` directories for a list of dependencies.
 
 Major Prerequisites are:
+Docker
 Python 3.7.1
 React 17.1
-Docker
 Nginx
 
 ### Installing

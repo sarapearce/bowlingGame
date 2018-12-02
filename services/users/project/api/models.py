@@ -26,35 +26,120 @@ class User(db.Model):
             'active': self.active
         }
 
-class Score(db.Model):
-    'The Score model manages the score. This comment can be improved'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    turn = db.Column(db.Integer, nullable=False)
-    pins = db.Column(db.Integer, nullable=False)
-    cummulative_score = db.Column(db.Integer, nullable=False)
-    player = db.Column(db.String(128), nullable=False)
-    created_date = db.Column(db.DateTime, default=func.now(), nullable=False)
+class Sizing(db.Model):
 
+    __tablename__ = "sizing"
 
-    def getLastTurn(self, player):
-        # get the last turn number, given the player
-        return ''
+    id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+    motor = db.Column(db.String(128), nullable=False)
+    control = db.Column(db.String(128), nullable=False)
+    plunger = db.Column(db.String(128), nullable=False)
+    head = db.Column(db.String(128), nullable=False)
+    pressure = db.Column(db.String(128), nullable=False)
+    minimumspeed = db.Column(db.String(128), nullable=False)
+    flowminccpermin = db.Column(db.String(128), nullable=False)
+    ahmin = db.Column(db.String(128), nullable=False)
+    flowmaxccpermin = db.Column(db.String(128), nullable=False)
+    ahmax = db.Column(db.String(128), nullable=False)
+    slope = db.Column(db.String(128), nullable=False)
+    yintercept = db.Column(db.String(128), nullable=False)
+    flowmingpd = db.Column(db.String(128), nullable=False)
+    flowmaxgpd = db.Column(db.String(128), nullable=False)
+    flowmingpdup5 = db.Column(db.String(128), nullable=False)
 
-    def getLastScore(self, turn, player):
-        # get the last score given a player
-        return ''
+    def __init__(self, motor, control, plunger, head, pressure, minimumspeed, flowminccpermin,
+    ahmin, flowmaxccpermin, ahmax, slope, yintercept, flowmingpd, flowmaxgpd, flowmingpdup5):
+        self.motor = motor
+        self.control = control
+        self.plunger = plunger
+        self.head = head
+        self.pressure = pressure
+        self.minimumspeed = minimumspeed
+        self.flowminccpermin = flowminccpermin
+        self.ahmin = ahmin
+        self.flowmaxccpermin = flowmaxccpermin
+        self.ahmax = ahmax
+        self.slope = slope
+        self.yintercept = yintercept
+        self.flowmingpd = flowmingpd
+        self.flowmaxgpd = flowmaxgpd
+        self.flowmingpdup5 = flowmingpdup5
 
-    def getCummulative(self, turn, player):
-        # get the cummulative score for the previous turn
-        return ''
+    def to_json(self):
+        return {
+            'id': self.id,
+            'motor': self.motor,
+            'control': self.control,
+            'plunger': self.plunger,
+            'head': self.head,
+            'pressure': self.pressure,
+            'minimumspeed': self.minimumspeed,
+            'flowminccpermin': self.flowminccpermin,
+            'ahmin': self.ahmin,
+            'flowmaxccpermin': self.flowmaxccpermin,
+            'ahmax': self.ahmax,
+            'slope': self.slope,
+            'yintercept': self.yintercept,
+            'flowmingpd': self.flowmingpd,
+            'flowmaxgpd': self.flowmaxgpd,
+            'flowmingpdup5': self.flowmingpdup5
+        }
 
-    def getLastPins(self, turn, player):
-        # get the number of pins that were knocked down previous turn
-        return ''
-
-    def updateScore(self, turn, player, score, cummulative_score):
-        # take a score model object and update the database
-        return ''
-
-    def __str__(self):
-        return '%s %s' % (self.turn, self.pins, self.cummulative_score)
+# class SmSizing(db.Model):
+#
+#     __tablename__ = "smsizing"
+#
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+#     motor = db.Column(db.String(128), nullable=False)
+#     control = db.Column(db.String(128), nullable=False)
+#     plunger = db.Column(db.String(128), nullable=False)
+#     head = db.Column(db.String(128), nullable=False)
+#     pressure = db.Column(db.String(128), nullable=False)
+#     minimumspeed = db.Column(db.String(128), nullable=False)
+#     flowminccpermin = db.Column(db.String(128), nullable=False)
+#     ahmin = db.Column(db.String(128), nullable=False)
+#     flowmaxccpermin = db.Column(db.String(128), nullable=False)
+#     ahmax = db.Column(db.String(128), nullable=False)
+#     slope = db.Column(db.String(128), nullable=False)
+#     yintercept = db.Column(db.String(128), nullable=False)
+#     flowmingpd = db.Column(db.String(128), nullable=False)
+#     flowmaxgpd = db.Column(db.String(128), nullable=False)
+#     flowmingpdup5 = db.Column(db.String(128), nullable=False)
+#
+#     def __init__(self, motor, control, plunger, head, pressure, minimumspeed, flowminccpermin,
+#     ahmin, flowmaxccpermin, ahmax, slope, yintercept, flowmingpd, flowmaxgpd, flowmingpdup5):
+#         self.motor = motor
+#         self.control = control
+#         self.plunger = plunger
+#         self.head = head
+#         self.pressure = pressure
+#         self.minimumspeed = minimumspeed
+#         self.flowminccpermin = flowminccpermin
+#         self.ahmin = ahmin
+#         self.flowmaxccpermin = flowmaxccpermin
+#         self.ahmax = ahmax
+#         self.slope = slope
+#         self.yintercept = yintercept
+#         self.flowmingpd = flowmingpd
+#         self.flowmaxgpd = flowmaxgpd
+#         self.flowmingpdup5 = flowmingpdup5
+#
+#     def to_json(self):
+#         return {
+#             'id': self.id,
+#             'motor': self.motor,
+#             'control': self.control,
+#             'plunger': self.plunger,
+#             'head': self.head,
+#             'pressure': self.pressure,
+#             'minimumspeed': self.minimumspeed,
+#             'flowminccpermin': self.flowminccpermin,
+#             'ahmin': self.ahmin,
+#             'flowmaxccpermin': self.flowmaxccpermin,
+#             'ahmax': self.ahmax,
+#             'slope': self.slope,
+#             'yintercept': self.yintercept,
+#             'flowmingpd': self.flowmingpd,
+#             'flowmaxgpd': self.flowmaxgpd,
+#             'flowmingpdup5': self.flowmingpdup5
+#         }

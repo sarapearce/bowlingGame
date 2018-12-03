@@ -6,7 +6,8 @@ class Bowl extends Component {
 
     // Set up our error states
     this.state = {
-
+      'score' : [],
+      'players' : []
     };
   }
 

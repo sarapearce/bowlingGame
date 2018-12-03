@@ -1,6 +1,7 @@
 # Bowling Game
 
-This project is a bowling game written in Python/Flask, Docker, and React. It was written with a very lean production environment in mind.
+This project is a bowling game written in Python/Flask, Docker, and React. It was written with a lean production environment in mind.
+<br>
 [![Build Status](https://travis-ci.org/testdrivenio/testdriven-app-2.3.svg?branch=master)](https://travis-ci.org/testdrivenio/testdriven-app-2.3)
 
 ## Getting Started
@@ -17,7 +18,7 @@ To play the game:
 
 `docker-compose -f docker-compose-dev.yml up -d --build`
 
-These two commands will spin up the Docker containers and the servers within. You should be able to see the front-end at http://localhost
+These commands will spin up the Docker containers and the servers within. You should be able to see the front-end at http://localhost
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -35,55 +36,39 @@ Nginx
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
 
+Set 1 environment variable:
 ```
-Give the example
+export REACT_APP_USERS_SERVICE_URL=http://localhost/users
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+`docker exec -it bowlinggame_user_1 bash`
 
-### Break down into end to end tests
+`cd /usr/src/app/project/tests`
 
-These are basic coverage, regression tests written by the Django framework.
-https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/
+`pytest`
 
-There are also tests in the (filename) that cover the
-Score model.
-
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+You will then see the output in terminal for those tests
 
 ## Deployment
 
-The environment for this project is minimal, and therefore doesn't distinguish between development and deployment environments.
+Run the command below in the root directory, and a Production secure Docker container set will spin up
+
+`docker-compose -f docker-compose-prod.yml up -d --build`
 
 ## Built With
 
-* [Python 3.7](https://docs.python.org/3/) - The scripting language
-* [Django](https://docs.djangoproject.com/en/2.1/) - The web framework used
-* [Tastypie](https://django-tastypie.readthedocs.io/en/latest/) - API framework for Django
+* [Docker](https://docs.docker.com/)
 
+* [Python 3.7](https://docs.python.org/3/)
+* [Flask](http://flask.pocoo.org/)
+* [Postgres](https://www.postgresql.org/docs/)
+* [Pytest](https://docs.pytest.org/en/latest/contents.html)
+
+* [React](https://reactjs.org/)
+* [Jest] (https://jestjs.io/)
 
 ## Authors
 
@@ -94,6 +79,3 @@ The environment for this project is minimal, and therefore doesn't distinguish b
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
-https://docs.djangoproject.com/en/2.1
-https://codeburst.io/create-a-django-api-in-under-20-minutes-2a082a60f6f3

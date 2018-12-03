@@ -34,8 +34,8 @@ def create_app(script_info=None):
     from project.api.users import users_blueprint
     app.register_blueprint(users_blueprint)
 
-    from project.api.sizing import sizing_blueprint
-    app.register_blueprint(sizing_blueprint)
+    from project.api.score import score_blueprint
+    app.register_blueprint(score_blueprint)
 
     # shell context for flask cli
     @app.shell_context_processor

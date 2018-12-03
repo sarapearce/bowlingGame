@@ -25,14 +25,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 See the Dockerfile inside each of the `services` directories for a list of dependencies.
 
-Major Prerequisites are:
-Docker
-<br>
-Python 3.7.1
-<br>
-React 17.1
-<br>
-Nginx
 
 ### Installing
 
@@ -67,7 +59,7 @@ Run the command below in the root directory, and a Production secure Docker cont
 * [Pytest](https://docs.pytest.org/en/latest/contents.html)
 
 * [React](https://reactjs.org/)
-* [Jest] (https://jestjs.io/)
+* [Jest](https://jestjs.io/)
 
 ## Authors
 

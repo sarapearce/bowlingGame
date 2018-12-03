@@ -80,8 +80,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Bowl {...this.state}/>{' '}
-      </div>{' '}
+        <Bowl {...this.state}/>
+      </div>
     );
   }
 }

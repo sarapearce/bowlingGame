@@ -1,4 +1,5 @@
 # services/users/project/tests/test_score.py
+
 import json
 import unittest
 
@@ -42,7 +43,7 @@ class ScoreModelTests(BaseTestCase):
             self.assertIn('success', data['status'])
 
 
-    def the_second_score_should_be_within_remaining_pins(self):
+    def second_score_should_be_within_remaining_pins(self):
         """
         Some comment that further elaborates what we are testing
         """

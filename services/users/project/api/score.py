@@ -30,9 +30,9 @@ def get_all_scores():
     return jsonify(response_object), 200
 
 
-@score_blueprint.route('/score/player', methods={'GET'})
+@score_blueprint.route('/score/player/<player_id>', methods={'GET', 'POST'})
 def get_player_score():
-    """Get motor data"""
+    """Get score data by player"""
     response_object = {
         'status': 'success',
         'data': {

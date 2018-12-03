@@ -31,11 +31,11 @@ def create_app(script_info=None):
     toolbar.init_app(app)
 
     # register blueprints
-    from project.api.users import users_blueprint
-    app.register_blueprint(users_blueprint)
-
     from project.api.score import score_blueprint
     app.register_blueprint(score_blueprint)
+
+    from project.api.users import users_blueprint
+    app.register_blueprint(users_blueprint)
 
     # shell context for flask cli
     @app.shell_context_processor

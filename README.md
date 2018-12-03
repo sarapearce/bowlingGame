@@ -2,13 +2,12 @@
 
 This project is a bowling game written in Python/Flask, Docker, and React. It was written with a lean production environment in mind.
 <br>
-[![Build Status](https://travis-ci.org/testdrivenio/testdriven-app-2.3.svg?branch=master)](https://travis-ci.org/testdrivenio/testdriven-app-2.3)
 
 ## Getting Started
 
 Clone this repo: https://github.com/sarapearce/bowling-game
 
-Most changes will be made in the users directory.
+Most changes will be made in the `users` directory.
 
 To play the game:
 
@@ -28,14 +27,14 @@ See the Dockerfile inside each of the `services` directories for a list of depen
 
 Major Prerequisites are:
 Docker
+<br>
 Python 3.7.1
+<br>
 React 17.1
+<br>
 Nginx
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
 
 Set 1 environment variable:
 ```
@@ -50,7 +49,7 @@ export REACT_APP_USERS_SERVICE_URL=http://localhost/users
 
 `pytest`
 
-You will then see the output in terminal for those tests
+You will then see the output in terminal for the unit tests
 
 ## Deployment
 
@@ -74,8 +73,7 @@ Run the command below in the root directory, and a Production secure Docker cont
 
 * **Sara Pearce** - *[Portfolio](http://sarapearce.net)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
+
+https://testdriven.io/
